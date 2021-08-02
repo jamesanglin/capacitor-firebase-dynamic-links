@@ -9,9 +9,9 @@ end
 
 target 'Plugin' do
   capacitor_pods
+  pod 'Firebase/DynamicLinks'
 end
 
 target 'PluginTests' do
   capacitor_pods
-  pod 'Firebase/DynamicLinks'
 end
