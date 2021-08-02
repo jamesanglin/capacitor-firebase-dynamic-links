@@ -13,4 +13,5 @@ end
 
 target 'PluginTests' do
   capacitor_pods
+  pod 'Firebase/DynamicLinks'
 end
