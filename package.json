@@ -42,7 +42,9 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "firebase",
+    "dynamic links"
   ],
   "capacitor": {
     "ios": {
@@ -56,12 +58,13 @@
   "swiftlint": "@ionic/swiftlint-config",
   "repository": {
     "type": "git",
-    "url": "jamesanglin/capacitor-firebase-dynamic-links"
+    "url": "https://github.com/jamesanglin/capacitor-firebase-dynamic-links"
   },
   "bugs": {
-    "url": "https://github.com/jamesanglin/capacitor-firebase-dynamic-links"
+    "url": "https://github.com/jamesanglin/capacitor-firebase-dynamic-links/issues"
   },
   "publishConfig": {
     "registry":"https://npm.pkg.github.com"
-  }
+  },
+  "homepage": "https://github.com/jamesanglin/capacitor-firebase-dynamic-links"
 }
