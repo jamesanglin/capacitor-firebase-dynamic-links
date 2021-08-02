@@ -37,7 +37,7 @@
     "dist/",
     "ios/",
     "android/",
-    "CapacitorFirebaseDynamicLinks.podspec"
+    "JamesAnglinCapacitorFirebaseDynamicLinks.podspec"
   ],
   "keywords": [
     "capacitor",
