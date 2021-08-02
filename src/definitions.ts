@@ -1,9 +1,9 @@
 declare module '@capacitor/core' {
   interface PluginRegistry {
-    FirebaseDynamicLinks: FirebaseDynamicLinksPlugin;
+    CapacitorFirebaseDynamicLinks: CapacitorFirebaseDynamicLinksPlugin;
   }
 }
 
-export interface FirebaseDynamicLinksPlugin {
+export interface CapacitorFirebaseDynamicLinksPlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
 }

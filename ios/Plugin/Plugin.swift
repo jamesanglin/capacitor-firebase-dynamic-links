@@ -1,20 +1,19 @@
 import Foundation
 import Capacitor
-import FirebaseCore
 import FirebaseDynamicLinks
-
+import FirebaseCore
 /**
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
  */
-@objc(FirebaseDynamicLinks)
-public class FirebaseDynamicLinks: CAPPlugin {
+@objc(CapacitorFirebaseDynamicLinks)
+public class CapacitorFirebaseDynamicLinks: CAPPlugin {
 
     public override func load() {
-         if FirebaseApp.app() == nil {
-             FirebaseApp.configure()
-         }
-
+        if (FirebaseApp.app() == nil) {
+                FirebaseApp.configure()
+            }
+        
          DynamicLinks.performDiagnostics(completion: nil)
 
          NotificationCenter.default.addObserver(self, selector: #selector(handleUrlOpened(notification:)), name: Notification.Name(CAPNotifications.URLOpen.name()), object: nil)
@@ -47,6 +46,11 @@ public class FirebaseDynamicLinks: CAPPlugin {
             print("CapacitorFirebaseDynamicLinks.handleUniversalLink() - couldn't parse url from notification")
             return
         }
+        
+        if(parsed.absoluteString.contains("sign-in")) {
+            self.notifyListeners("signInWithLink", data: ["url": parsed.absoluteString], retainUntilConsumed: true)
+            return
+        }
 
         let response = DynamicLinks.dynamicLinks().handleUniversalLink(parsed) { (dynamiclink, error) in
             guard error == nil else {
@@ -61,7 +65,7 @@ public class FirebaseDynamicLinks: CAPPlugin {
 
         if !response {
             print("""
-              CapacitorFirebaseDynamicLinks.handleUniversalLink()
+              [CapacitorFirebaseDynamicLinks]: handleUniversalLink()
               Unable to parse dynamic link. Please ensure you have set up Firebase Dynamic Links correctly.
             """)
         }
