@@ -1,5 +1,5 @@
 {
-  "name": "capacitor-firebase-dynamic-links",
+  "name": "@jamesanglin/capacitor-firebase-dynamic-links",
   "version": "0.0.1",
   "description": "A capacitor plugin for implementing firebase dynamic links.",
   "main": "dist/plugin.js",
@@ -59,6 +59,9 @@
     "url": "jamesanglin/capacitor-firebase-dynamic-links"
   },
   "bugs": {
-    "url": "jamesanglin/capacitor-firebase-dynamic-links/issues"
+    "url": "https://github.com/jamesanglin/capacitor-firebase-dynamic-links"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }
